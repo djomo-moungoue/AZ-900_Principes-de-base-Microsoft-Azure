@@ -16,7 +16,7 @@ La `reprise après sinistre` est la capacité de votre application à redémarre
 
 Contrèrement aux centres de calculs sur sites, les infractures cloud Azure permettent aux entreprises, sur le `plan économique`, de passer d'un modèle d'achat (dépenses d'investissement - CAPEX) qui mobilise beaucoup de ressources financières de l'entreprise à un modèle de fonctionnement (dépenses de fonctionnement - OPEX) qui repose sur la facturation à l'usage. L'effet de masse d'achat permet aux fournisseurs de cloud publique comme Microsoft d'acheter les infrastures moins chères et de les louer également à des coûts réduits. Microsoft permet de calculer les coûts des ressources utilisées grâce à la calcullatrice de prix.
 
-Le `modèle de responsabilité partagée` permet de definir qui est de Microsoft ou vous est responsable des ressources et de la sécurité dans cloud Azure que vous utilisez. Ce niveau de responsabilité permet donc de définir les 3 catégories de services cloud à savoir: SaaS, PaaS IaaS
+Le `modèle de responsabilité partagée` permet de definir qui est de Microsoft ou vous est responsable des ressources et de la sécurité dans cloud Azure que vous utilisez. Ce niveau de responsabilité permet donc de définir les 3 catégories de services cloud à savoir: logiciel en tant que service (SaaS), plateforme en tant que service (PaaS) et infrastructure en tant que service (IaaS).
 |N°|ressource|SaaS|PaaS|IaaS|On-premise|
 |---|---|---|---|---|---|
 |9 | Applications|Microsoft|Vous|Vous|Vous|
