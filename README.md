@@ -24,7 +24,7 @@ Le modèle de responsabilité partagé permet de definir qui est de Microsoft ou
 |3 | Runtime|Microsoft|Microsoft|Vous|Vous|
 |4 | Middleware|Microsoft|Microsoft|Vous|Vous|
 |5 | OS|Microsoft|Microsoft|Vous|Vous|
-|6 | Vitualisation|Microsoft|Vous|Vous|Vous|
-|7 | Serveurs|Microsoft|Vous|Vous|Vous|
-|8 | Stockage|Microsoft|Vous|Vous|Vous|
-|9 | Mise en réseau|Microsoft|Vous|Vous|Vous|
+|6 | Vitualisation|Microsoft|Microsoft|Microsoft|Vous|
+|7 | Serveurs|Microsoft|Microsoft|Microsoft|Vous|
+|8 | Stockage|Microsoft|Microsoft|Microsoft|Vous|
+|9 | Mise en réseau|Microsoft|Microsoft|Microsoft|Vous|
