@@ -29,4 +29,4 @@ Le `modèle de responsabilité partagée` permet de definir qui est de Microsoft
 |2 | Stockage|Microsoft|Microsoft|Microsoft|Vous|
 |1 | Mise en réseau|Microsoft|Microsoft|Microsoft|Vous|
 
-Lorsque vous loyez un logiciel Microsoft (SaaS) tel que Outlook (1-9) Microsoft s'occupe de tous. Cependant, si vous louez une plateforme Microsoft (PaaS) tel que Azure Cloud Service (8-9), Microsoft est s'occupe de la mise en réseau jusqu'à l'environnement d'exécution de l'application (1-7). Si Microsoft vous loue plutôt une infrastructure (IaaS) tel qu'une machine virtuelle (1-4), vous vous occuperez du système d'exploitation jusqu'à l'applications que vous exécuteriez (5-9).
+Lorsque vous loyez un logiciel Microsoft (SaaS) tel que `Outlook` (1-9) Microsoft s'occupe de tous. Cependant, si vous louez une plateforme Microsoft (PaaS) tel que `Azure Cloud Service` (8-9), Microsoft est s'occupe de la mise en réseau jusqu'à l'environnement d'exécution de l'application (1-7). Si Microsoft vous loue plutôt une infrastructure (IaaS) tel qu'une `machine virtuelle` (1-4), vous vous occuperez du système d'exploitation jusqu'à l'applications que vous exécuteriez (5-9).
