@@ -41,7 +41,7 @@ L'`infrastructure en tant que code` est une technique qui permet de coder sous f
 
 Lors du choix d'un service cloud le plus approprié pour votre organisation, garder à l'esprit que:
 - L'IaaS vous permet d'être flexible lors de la gestion des ressources de votre infrastructure, de ne payer que le temps d'utilisation de vos ressources, et de supprimer/créer vos ressources à la volée à travers l'infrastructe en tant que code. Cependant elle vous oblige à mobiliser des compétences techniques pointues dans différents domaines. Elle est de ce fait appropriée pour les entreprises ayant des serveurs sur site et qui veulent adopter le modèle cloud progressivement.
-- Le PaaS de son côté, vous épargnera de la gestion des infrastrures sous-jacent lors du développement de vos applications tout en vous permettant d'avoir de multiples environnments facturés à leur durée d'utilisation. Ce type service est donc appropriée pour les entriprises qui créer leurs logiciel directement dans le cloud.
+- Le PaaS de son côté, vous épargnera de la gestion des infrastrures sous-jacent lors du développement de vos applications tout en vous permettant d'avoir de multiples environnments facturés à leur durée d'utilisation. Ce type service est donc appropriée pour les entriprises qui créer leurs logiciel directement dans le cloud. Cependant vous pourriez être limité par le fait que l'infrastructure sous-jacente ne supporte pas certains langages et certaines mises à jour de la plate-forme de développement par le fournisseur de cloud pourrait effecter vos configurations et vos applications.
 
 
 
