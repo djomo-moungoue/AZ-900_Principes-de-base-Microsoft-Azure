@@ -14,17 +14,16 @@ La `reprise après sinistre` est la capacité de votre application à redémarre
 
 Contrèrement aux centres de calculs sur sites, les infractructures cloud Azure permettent aux entreprises, sur le `plan économique`, de passer d'un modèle d'achat (dépenses d'investissement - CAPEX) qui mobilise beaucoup de ressources financières de l'entreprise à un modèle de fonctionnement (dépenses de fonctionnement - OPEX) qui repose sur la facturation à l'usage. L'effet de masse d'achat permet aux fournisseurs de cloud publique comme Microsoft d'acheter les infrastures moins chères et de les louer également à des coûts réduits. Microsoft permet de calculer les coûts des ressources utilisées grâce à la calcullatrice de prix.
 
-Le `modèle de responsabilité partagée` permet de definir qui est de Microsoft ou vous est responsable des ressources et de la sécurité dans cloud Azure que vous utilisez. Ce niveau de responsabilité permet donc de définir les 3 catégories de services cloud à savoir: logiciel en tant que service (SaaS), plateforme en tant que service (PaaS) et infrastructure en tant que service (IaaS).
+Le `modèle de responsabilité partagée` permet de definir le niveau de responsabilité entre Microsoft ou vous par rapport à la disponibilité et la sécurité des ressources du cloud Azure que vous utilisez. Ce niveau de responsabilité permet donc de définir les 3 catégories de services cloud à savoir: logiciel en tant que service (SaaS), plateforme en tant que service (PaaS) et infrastructure en tant que service (IaaS).
 |N°|ressource|SaaS|PaaS|IaaS|On-premise|exemples|
 |---|---|---|---|---|---|---|
-|9 | Applications|Microsoft|Vous|Vous|Vous|docker, python, node.js, GitHub, java, etc.|
-|8 | Données |Microsoft|Vous|Vous|Vous||
+|9 | `Applications (+ Données)`|Microsoft|Vous|Vous|Vous|docker, python, node.js, GitHub, java, etc.|
 |7 | `Environnement d'exécution` |Microsoft|Microsoft|Vous|Vous||
 |6 | Intergiciel|Microsoft|Microsoft|Vous|Vous||
 |5 | Système d'exploitation|Microsoft|Microsoft|Vous|Vous|Windows ou Linux|
-|4 | `Vitualisation`|Microsoft|Microsoft|Vous|Vous|Machine virtuelle Azure, Machine virtuelle Azure VMWare Solution|
+|4 | `Logiciel de virtualisation`|Microsoft|Microsoft|Microsoft|Vous|Machine virtuelle Azure, Machine virtuelle Azure VMWare Solution|
 |3 | Serveurs|Microsoft|Microsoft|Microsoft|Vous|Serveur SQL Database|
-|2 | Stockage|Microsoft|Microsoft|Microsoft|Vous|compte de stockage Azure|
+|2 | Stockage|Microsoft|Microsoft|Microsoft|Vous|compte de stockage Azure, disque dur|
 |1 | Mise en réseau|Microsoft|Microsoft|Microsoft|Vous|192.168.1.0/24 (Espaca d'adressage IPv4), ace:cab:deca::/48 (Espace d'adressage IPv6)|
 
 Lorsque vous loyez un logiciel Microsoft (SaaS) tel que `Office 365 (Excel, Outlook, Word, PowerPoint ), salesforce, slack, Jira, Google (GMail, Sheet, Slide, etc.), WebEx` (1-9) Microsoft s'occupe de tous. Contrairement aux PaaS et IaaS qui s'obtiennent à travers l'achat de licnce, Les SaaS s'obtiennent à travers un abonnement mensuel. Le fournisseur cloud est responsable de la mise à jour de l'infrastructure, de la mise à jour des l'application et des la sauvegarde des données.
@@ -42,15 +41,21 @@ L'`infrastructure en tant que code` est une technique qui permet de coder sous f
 Lors du choix d'un service cloud le plus approprié pour votre organisation, garder à l'esprit que:
 - L'`IaaS` (Machine virtuelle) vous permet d'être flexible lors de la gestion des ressources de votre infrastructure, de ne payer que le temps d'utilisation de vos ressources, et de supprimer/créer vos ressources à la volée à travers l'infrastructe en tant que code. Cependant elle vous oblige à mobiliser des compétences techniques pointues dans différents domaines. Elle est de ce fait appropriée pour les entreprises ayant des serveurs sur site et qui veulent adopter le modèle cloud progressivement.
 - Le `PaaS` (Environnement de développement) de son côté, vous épargnera de la gestion des infrastrures sous-jacent lors du développement de vos applications tout en vous permettant d'avoir de multiples environnments facturés à leur durée d'utilisation. Ce type service est donc appropriée pour les entriprises qui créer leurs logiciel directement dans le cloud. Cependant vous pourriez être limité par le fait que l'infrastructure sous-jacente ne supporte pas certains langages et certaines mises à jour de la plate-forme de développement par le fournisseur de cloud pourrait effecter vos configurations et vos applications.
-- Avec le `SaaS` en revanche, vous benefier d'une gamme de logiciels extrêmement vaste sans vous soucier de la gestion de l'infrastructure sous-jacent ainsi que de la sauvegarde des données. Cependant le gestion budgetaire à long terme (facturation mensuelle par utilisateur) peut devenir exponentielle en fonction de l'évolution de votre activité. En plus il vous est impossible de personnaliser l'application parce qu'elle ne vous appartient pas.
+- Avec le `SaaS` (Applications) en revanche, vous benefier d'une gamme de logiciels extrêmement vaste sans vous soucier de la gestion de l'infrastructure sous-jacent ainsi que de la sauvegarde des données. Cependant le gestion budgetaire à long terme (facturation mensuelle par utilisateur) peut devenir exponentielle en fonction de l'évolution de votre activité. En plus il vous est impossible de personnaliser l'application parce qu'elle ne vous appartient pas.
 
-Le `cloud public` est un cloud accessible à tout le monde via Internet. Microsoft Azure est un exemple de cloud publique qui couvre environ 140 pays, possède près de 200 de centres de données physiques, organisés en régions et connectés les uns au autres par plus de 250000 km de câble optique sous-marin. Un cloud publique est intéressant parce qu'il est facilement accessible, offre des services très riche, contrôle des coûts avec le paiement à l'utilisation. cependant vous êtes dépendant des services proposés; vous êtes également confrontés à un problème de sécurité dû au fait que vous utilisez une infrastructure partagée avec d'autres clients. D'autres exemples de fournisseurs: Alibaba Cloud, AWS, Google Cloud Platform, Orange Business Services.
+Le `cloud public` est un cloud multi-tenant c'est à dire accessible à tout le monde via Internet. Microsoft Azure est un exemple de cloud publique qui couvre environ 140 pays, possède près de 200 de centres de données physiques, organisés en régions et connectés les uns au autres par plus de 250000 km de câble optique sous-marin. Un cloud publique est intéressant parce qu'il est facilement accessible, offre des services très riche, contrôle des coûts avec le paiement à l'utilisation. cependant vous êtes dépendant des services proposés; vous êtes également confrontés à un problème de sécurité dû au fait que vous utilisez une infrastructure partagée avec d'autres clients. D'autres exemples de fournisseurs: Alibaba Cloud, AWS, Google Cloud Platform, Orange Business Services.
 
-Le `cloud privée` est un cloud accessible exclusivement par un seul client pour assurer la confidentialité des données et les contraintes réglementaires. A cause du coût élevé de ce dernier, il est à privilégier si le cloud publique est impossible. Exemple de fournisseurs: Openstack, WMWare.
+Le `cloud privée` est un cloud à simple tenant c'est à dire accessible exclusivement par un seul client pour assurer la confidentialité des données et les contraintes réglementaires. A cause du coût élevé de ce dernier, il est à privilégier si le cloud publique est impossible. Exemple de fournisseurs: Openstack, WMWare. Un cloud privé peut appartir au client ou à un fournisseur de cloud qui a dédié exclusivement une infrastructure à un client.
 
 Le `cloud hybride` est composé du cloud public, cloud privé et éventuellement d'un environnement on-premise.
 
 Microsoft Azure propose son catalogue de services à travers sa place de marché Azure où vous pouvez choisir les services aux caractéristiques qui vous conviennent. Il ne faut pas confondre les 3 types de cloud (SaaS, PaaS et IaaS) aux 3 modèles de cloud (publique, privé et hybride).
+
+Le `SLA` est un accord entre le fournisseur de cloud et vou qui guarantit le niveu de disponibilité de leurs infrastrustures.
+
+Les `OPEX` sont des dépenses opérationnelles proportionnelles à la quantité de ressources et au temps d'usage des ressources d'un cloud. 
+
+L'`autoscaling` (à ne pas confondre avec la tolérance aux pannes) est un service Azure permettant d'ajuster automoatiquement les ressources liées à votre application.
 
 ## Tarification
 
