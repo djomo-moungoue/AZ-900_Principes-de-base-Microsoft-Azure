@@ -21,7 +21,7 @@ Le `modèle de responsabilité partagée` permet de definir le niveau de respons
 |7 | `Environnement d'exécution` |Microsoft|Microsoft|Vous|Vous||
 |6 | Intergiciel|Microsoft|Microsoft|Vous|Vous||
 |5 | Système d'exploitation|Microsoft|Microsoft|Vous|Vous|Windows ou Linux|
-|4 | `Logiciel de virtualisation`|Microsoft|Microsoft|Microsoft|Vous|Machine virtuelle Azure, Machine virtuelle Azure VMWare Solution|
+|4 | `Logiciel de virtualisation (hyperviseur)`|Microsoft|Microsoft|Microsoft|Vous|Machine virtuelle Azure, Machine virtuelle Azure VMWare Solution|
 |3 | Serveurs|Microsoft|Microsoft|Microsoft|Vous|Serveur SQL Database|
 |2 | Stockage|Microsoft|Microsoft|Microsoft|Vous|compte de stockage Azure, disque dur|
 |1 | Mise en réseau|Microsoft|Microsoft|Microsoft|Vous|192.168.1.0/24 (Espaca d'adressage IPv4), ace:cab:deca::/48 (Espace d'adressage IPv6)|
@@ -56,6 +56,12 @@ Le `SLA` est un accord entre le fournisseur de cloud et vou qui guarantit le niv
 Les `OPEX` sont des dépenses opérationnelles proportionnelles à la quantité de ressources et au temps d'usage des ressources d'un cloud. 
 
 L'`autoscaling` (à ne pas confondre avec la tolérance aux pannes) est un service Azure permettant d'ajuster automoatiquement les ressources liées à votre application.
+
+L'`hyperviseur` permet de créer des machines virtuelles.
+
+Les machines virtuelles stoppées ne sont pas facturées.
+
+## Les Services principaux d'Azure
 
 ## Tarification
 
