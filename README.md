@@ -63,6 +63,10 @@ Les machines virtuelles stoppées ne sont pas facturées.
 
 ## Les Services principaux d'Azure
 
+L'[infrastructure globale d'Azure](https://datacenters.microsoft.com/globe/explore) est repartie par géographie. Une géographie est un marché distinct marqué par les frontières d'un pays; elle peut contenir une ou plusieurs régions. Une `région` comporte plusieurs centres de données. Une `paire régionale` est constituée de 2 régions dans la même géographie; elle permet d'assurer la redondance de données liée à un compte de stockage.
+
+La `latence du réseau` est le délai de communication réseau.
+
 ## Tarification
 
 |Ressource|critère de tarification|
