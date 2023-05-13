@@ -71,6 +71,6 @@ Une `zone de disponibilité` correspond à 1 centre de données particulier dans
 
 Un `groupe de ressources` permet de regrouper vos ressources de manière logique afin de les administrer plus facilement.
 
-Un `abonnement ou souscription` est lié à une seule `facture` et un quota de ressources par régions et par types de ressource. Un `groupe d'administration (ou de gestion)` est lié à des politiques et permet de regrouper vos abonnements en fonction des politiques/stratégies de sécurité d'accès et de conformité au niveau des ressources appartenant aux abonnements.
+Un `abonnement ou souscription` est lié à une seule `facture` et un quota de ressources par régions et par types de ressource; l'augementation du quota se fait par une `demande de support`. Un `groupe d'administration (ou de gestion)` est lié à des politiques et permet de regrouper vos abonnements en fonction des politiques/stratégies de sécurité d'accès et de conformité au niveau des ressources appartenant aux abonnements.
 
-Un modèle `Azure Resource Manager (ARM)` est constitué d'un fichier JSON qui contient tous les paramètres de la ressource. A l'aide d'un modèle ARM existant, vous pouvez utiliser `Azure PowerShell` pour gérer vos ressources Azure et `Azure CLI` pour gérer vos groupes de ressources Azure.
+Un modèle `Azure Resource Manager (ARM)` est constitué d'un fichier JSON qui contient tous les paramètres de la ressource. A l'aide d'un modèle ARM existant, vous pouvez utiliser `Azure PowerShell` pour automatiser la gestion de vos ressources Azure et `Azure CLI` pour automatiser la gestion de vos groupes de ressources Azure.
