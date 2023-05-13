@@ -67,13 +67,7 @@ L'[infrastructure globale d'Azure](https://datacenters.microsoft.com/globe/explo
 
 La `latence du réseau` est le délai de communication réseau.
 
-## Tarification
+Une `zone de disponibilité` correspond à 1 centre de données particulier dans une région, isolé physiquement des autres centres de données de la région.Il est recommandé de mettre en place des zones de disponibilité si l'interruption du service des vos applications coute plus cher que le cout supplémentaire que génèrent les données repliquées dans les zones de disponibilité.
 
-|Ressource|critère de tarification|
-|---|---|
-|Apllication de fonction|temps d'exécution de la fonction|
-|Machine Virtuelle|temps d'utilisation de la VM|
-|Serveurs||
-|Compte de stockage||
-|Mise en réseau||
+Un `groupe de ressources` permet de regrouper vos ressources de manière logique afin de les administrer plus facilement.
 
