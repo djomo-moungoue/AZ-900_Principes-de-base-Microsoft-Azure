@@ -18,12 +18,12 @@ Le `modèle de responsabilité partagée` permet de definir le niveau de respons
 |N°|ressource|SaaS|PaaS|IaaS|On-premise|exemples|
 |---|---|---|---|---|---|---|
 |9 | `Applications (+ Données)`|Microsoft|Vous|Vous|Vous|docker, python, node.js, GitHub, java, etc.|
-|7 | `Environnement d'exécution` |Microsoft|Microsoft|Vous|Vous||
+|7 | `Environnement d'exécution ou de développement` |Microsoft|Microsoft|Vous|Vous||
 |6 | Intergiciel|Microsoft|Microsoft|Vous|Vous||
 |5 | Système d'exploitation|Microsoft|Microsoft|Vous|Vous|Windows ou Linux|
-|4 | `Logiciel de virtualisation (hyperviseur)`|Microsoft|Microsoft|Microsoft|Vous|Machine virtuelle Azure, Machine virtuelle Azure VMWare Solution|
-|3 | Serveurs|Microsoft|Microsoft|Microsoft|Vous|Serveur SQL Database|
-|2 | Stockage|Microsoft|Microsoft|Microsoft|Vous|compte de stockage Azure, disque dur|
+|4 | `Logiciel de virtualisation (hyperviseur)`|Microsoft|Microsoft|Microsoft|Vous|vmware, Microsoft Hyper-V Server, Citrix XenServer, KVM|
+|3 | Serveurs physiques (noeuds ou hôte) |Microsoft|Microsoft|Microsoft|Vous|Serveur SQL Database|
+|2 | Stockage (disque dur) |Microsoft|Microsoft|Microsoft|Vous|compte de stockage Azure, disque dur|
 |1 | Mise en réseau|Microsoft|Microsoft|Microsoft|Vous|192.168.1.0/24 (Espaca d'adressage IPv4), ace:cab:deca::/48 (Espace d'adressage IPv6)|
 
 Lorsque vous loyez un logiciel Microsoft (SaaS) tel que `Office 365 (Excel, Outlook, Word, PowerPoint ), salesforce, slack, Jira, Google (GMail, Sheet, Slide, etc.), WebEx` (1-9) Microsoft s'occupe de tous. Contrairement aux PaaS et IaaS qui s'obtiennent à travers l'achat de licnce, Les SaaS s'obtiennent à travers un abonnement mensuel. Le fournisseur cloud est responsable de la mise à jour de l'infrastructure, de la mise à jour des l'application et des la sauvegarde des données.
@@ -57,8 +57,6 @@ Les `OPEX` sont des dépenses opérationnelles proportionnelles à la quantité 
 
 L'`autoscaling` (à ne pas confondre avec la tolérance aux pannes) est un service Azure permettant d'ajuster automoatiquement les ressources liées à votre application.
 
-L'`hyperviseur` permet de créer des machines virtuelles.
-
 Les machines virtuelles stoppées ne sont pas facturées.
 
 ## Les Services principaux d'Azure
@@ -78,3 +76,27 @@ Un modèle `Azure Resource Manager (ARM)` est constitué d'un fichier JSON qui c
 [Les partenaires Azure Expert MSP](https://portal.azure.com/#view/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home) sont des fournisseurs de services cloud ayant un badge Azure Expert MSP qui est un gage de confiance pour les clients recherchant un partenaire pour les aider à atteindre leurs objectifs de transformation numérique. Exemples:
 - Luxembourg (Henson Group Services Ireland Limited, Sogeti, IBM, Fujitsu Limited)
 - Allemagne (Claranet GmbH, Avanade Deutschland GmbH, Fujitsu, Hewlett-Packard Galway Ltd, InTWO International, Crayon Deutschland GmbH, Nordcloud, Eviden SAS UK, Rackspace Gemany GmbH, Cognizant Technology Solutions US Corporation, IBM, SoftwareONE Inc., Henson Group, Insight Direct (UK) Limited)
+
+Une `machine virtuelle (invité)` est un ordinateur qui est basé sur un logiciel côntrolé par un `hyperviseur` qui est installé sur un serveur physique. Une machine virtuelle a des `caractéristiques standards` liées au serveur physique sous-jacent et des `caratéristiques écosystèmes` liées au réseau virtuel sous-jacent.
+
+L'`hyperviseur` est installé sur un serveur physique et permet de créer des instances de machines virtuelles.
+
+Un `machine/serveur physique (hôte)` en revanche, contient une carte mère avec des processeurs, des barettes de mémoire, un ou plusieurs disques durs ou SSD et fonctionne avec un système d'exploitation Linux, Windows ou MacOS. Les serveurs physiques contenu dans les salles machines sont généralement appelés `noeud` regroupés dans des racks qui sont à leurs tour empilés dans des armoires. `salle machine (armoires ( racks (noeuds)))`.
+
+L'`adresse IP publique` de votre machine virtuelle peut changer automatiquement lorsque vous stoppez votre VW sans la reserver (cette reservation est une ressource payante). Ne soyez donc pas surpris si elle est différente au redémarrage.
+
+Lorsque vous créez une machine virtuelle linux, il est recommandé de la mettre à jour avant de l'utiliser afin d'y installer tous les nouveaux packages crées par linux aprés la création de l'image de la dite machine virtuelle par Microsoft.
+~~~
+$ sudo apt-get update
+~~~
+
+La connexion aux machines virtuelles windowns se fait par le port RDP (3389) tandis que la connexion à une machine virtuelle linux se fait à travers le port SSH (22). 
+
+Une machine virtuelle est susceptible d'être arrêtée à cause de 3 événements:
+- une `maintenance planifiée` du serveur physique par Microsoft. Exemple: mise à jour OS, drivers, etc.
+- une `maintenance non planifiée` du serveur physique par Microsoft. Exemple: détection d'un problème sur l'hôte qui nécessite une mise en pause de la VW.
+- un `arrête brutal` du serveur physique. Exemple: problème grave sur l'hôte qui provoque un arrête immédiat de la VW.
+
+Le `domaine d'erreur` (vm sur différentes racks) vous permet d'assurer la haute disponibilité de vos application lors d'une maintenance planifiée et un arrêt brutal. Le `domaine de mise à jour` vous permettra d'assurer la haute disponibilité des vos apps lors des maintenances planifiées.
+
+Un `groupe à haute disponibilité` est une fonctionnalité de regroupement logique qui permet d’isoler les ressources de machine virtuelle les unes des autres quand elles sont déployées. Il contient 2-3 domaines d'erreur et 5-20 domaines de mise à jour.
