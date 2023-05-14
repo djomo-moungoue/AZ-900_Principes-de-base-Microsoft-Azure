@@ -100,3 +100,12 @@ Une machine virtuelle est susceptible d'être arrêtée à cause de 3 événemen
 Le `domaine d'erreur` (vm sur différentes racks) vous permet d'assurer la haute disponibilité de vos application lors d'une maintenance planifiée et un arrêt brutal. Le `domaine de mise à jour` vous permettra d'assurer la haute disponibilité des vos apps lors des maintenances planifiées.
 
 Un `groupe à haute disponibilité` est une fonctionnalité de regroupement logique qui permet d’isoler les ressources de machine virtuelle les unes des autres quand elles sont déployées. Il contient 2-3 domaines d'erreur et 5-20 domaines de mise à jour.
+
+L'`équilibrage de charge`
+
+Les `groupes de machines virtuelles identiques Azure` vous permettent de créer et de gérer un groupe de machines virtuelles avec équilibrage de charge. Le nombre d’instances de machine virtuelle peut augmenter ou diminuer automatiquement en réponse à la demande ou à une planification définie. Les groupes identiques offrent une haute disponibilité à vos applications et vous permettent de centraliser la gestion, la configuration et la mise à jour d’un grand nombre de machines virtuelles.
+
+La `réservation` de ressources permet économiser lorsque vous savez que vous utliserez une ressources pendant une longue période. 
+
+Le `service d'application` vous permet de déployer vos applications dans Azure sans vous soucier de l'administration des machines vituelles sous-jacentes. Le plan service d'applicaition l'ensemble des machines virtuelles créer automatique par Microsoft pour assurer le déployement de vos applications.
+
