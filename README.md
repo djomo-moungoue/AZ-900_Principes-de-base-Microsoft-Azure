@@ -4,7 +4,7 @@
 
 La `haute disponibilité` des infrastructures AZ est la capacité de ces derniers à assurer la continuité des applications hébergées en cas de problème technique avec des machines virtuelles ou le réseau par exemples.Elle est réalisée par le concept de rédondance qui conciste à dupliquer les infrastrutures. Ceci s'effectue lors de la création du compte de stockage en choisissant une des 4 options suivantes: Le stockage localement redondant (LRS), stockage géoredondant (GRS), stockage redondant interzone (ZRS) ou le stockage géoredondant interzone (GRS).
 
-La `scalabilité (évolubilité)` d'une infrastructure AZ est sa capacité à augmenter ou diminuer les ressources disponibles verticalement ou horizontalement en fonction d'un besoin pontuel. Ceci s'effectue soit en ajoutant de nouvelles ressources (horizontal) ou en augmentant le puissance des ressources existantes (vertical). 
+La `scalabilité (évolubilité)` d'une infrastructure AZ est sa capacité à augmenter ou diminuer les ressources disponibles verticalement ou horizontalement en fonction d'un besoin pontuel. Ceci s'effectue soit en ajoutant de nouvelles ressources (horizontal) ou en augmentant le puissance des ressources existantes (vertical). Les App Service Plan ainsi que les App Services sont scalable.
 
 L`élasticité (agilité)` d'une infrastructure scalable est la capacité de celle-ci à ajouter ou supprimer (redimentioner) les ressources qu'elle héberge automatiquement en fonction de la variation de la charge de travail. Ceci peut se réaliser en définissant des métriques.
 
@@ -43,9 +43,9 @@ Lors du choix d'un service cloud le plus approprié pour votre organisation, gar
 - Le `PaaS` (Environnement de développement) de son côté, vous épargnera de la gestion des infrastrures sous-jacent lors du développement de vos applications tout en vous permettant d'avoir de multiples environnments facturés à leur durée d'utilisation. Ce type service est donc appropriée pour les entriprises qui créer leurs logiciel directement dans le cloud. Cependant vous pourriez être limité par le fait que l'infrastructure sous-jacente ne supporte pas certains langages et certaines mises à jour de la plate-forme de développement par le fournisseur de cloud pourrait effecter vos configurations et vos applications.
 - Avec le `SaaS` (Applications) en revanche, vous benefier d'une gamme de logiciels extrêmement vaste sans vous soucier de la gestion de l'infrastructure sous-jacent ainsi que de la sauvegarde des données. Cependant le gestion budgetaire à long terme (facturation mensuelle par utilisateur) peut devenir exponentielle en fonction de l'évolution de votre activité. En plus il vous est impossible de personnaliser l'application parce qu'elle ne vous appartient pas.
 
-Le `cloud public` est un cloud multi-tenant c'est à dire accessible à tout le monde via Internet. Microsoft Azure est un exemple de cloud publique qui couvre environ 140 pays, possède près de 200 de centres de données physiques, organisés en régions et connectés les uns au autres par plus de 250000 km de câble optique sous-marin. Un cloud publique est intéressant parce qu'il est facilement accessible, offre des services très riche, contrôle des coûts avec le paiement à l'utilisation. cependant vous êtes dépendant des services proposés; vous êtes également confrontés à un problème de sécurité dû au fait que vous utilisez une infrastructure partagée avec d'autres clients. D'autres exemples de fournisseurs: Alibaba Cloud, AWS, Google Cloud Platform, Orange Business Services.
+Le `cloud public` est un cloud multi-tenant (locataire) c'est à dire accessible à tout le monde via Internet. Microsoft Azure est un exemple de cloud publique qui couvre environ 140 pays, possède près de 200 de centres de données physiques, organisés en régions et connectés les uns au autres par plus de 250000 km de câble optique sous-marin. Un cloud publique est intéressant parce qu'il est facilement accessible, offre des services très riche, contrôle des coûts avec le paiement à l'utilisation. cependant vous êtes dépendant des services proposés; vous êtes également confrontés à un problème de sécurité dû au fait que vous utilisez une infrastructure partagée avec d'autres clients. D'autres exemples de fournisseurs: Alibaba Cloud, AWS, Google Cloud Platform, Orange Business Services.
 
-Le `cloud privée` est un cloud à simple tenant c'est à dire offfre des infrastructures accessibles exclusivement par un seul client pour assurer la confidentialité des données et les contraintes réglementaires. Dans ce modèle aucun moyen de communication n'existe entre les infrastructures de différents clients. A cause du coût élevé de ce dernier, il est à privilégier si le cloud publique est impossible. Exemple de fournisseurs: Openstack, WMWare. Un cloud privé peut appartir au client ou à un fournisseur de cloud qui a dédié exclusivement une infrastructure à un client.
+Le `cloud privée` est un cloud à simple tenant (locataire) c'est à dire offfre des infrastructures accessibles exclusivement par un seul client pour assurer la confidentialité des données et les contraintes réglementaires. Dans ce modèle aucun moyen de communication n'existe entre les infrastructures de différents clients. A cause du coût élevé de ce dernier, il est à privilégier si le cloud publique est impossible. Exemple de fournisseurs: Openstack, WMWare. Un cloud privé peut appartir au client ou à un fournisseur de cloud qui a dédié exclusivement une infrastructure à un client.
 
 Le `cloud hybride` est composé du cloud public, cloud privé et éventuellement d'un environnement on-premise.
 
@@ -79,7 +79,7 @@ Un modèle `Azure Resource Manager (ARM)` est constitué d'un fichier JSON qui c
 
 Une `machine virtuelle (invité)` est un ordinateur qui est basé sur un logiciel côntrolé par un `hyperviseur` qui est installé sur un serveur physique. Une machine virtuelle a des `caractéristiques standards` liées au serveur physique sous-jacent et des `caratéristiques écosystèmes` liées au réseau virtuel sous-jacent.
 
-L'`hyperviseur` est installé sur un serveur physique et permet de créer des instances de machines virtuelles.
+L'`hyperviseur` est un composant logiciel installé sur un serveur physique et qui permet de créer et gérer des instances de machines virtuelles.
 
 Un `machine/serveur physique (hôte)` en revanche, contient une carte mère avec des processeurs, des barettes de mémoire, un ou plusieurs disques durs ou SSD et fonctionne avec un système d'exploitation Linux, Windows ou MacOS. Les serveurs physiques contenu dans les salles machines sont généralement appelés `noeud` regroupés dans des racks qui sont à leurs tour empilés dans des armoires. `salle machine (armoires ( racks (noeuds)))`.
 
@@ -90,7 +90,7 @@ Lorsque vous créez une machine virtuelle linux, il est recommandé de la mettre
 $ sudo apt-get update
 ~~~
 
-La connexion aux machines virtuelles windowns se fait par le port RDP (3389) tandis que la connexion à une machine virtuelle linux se fait à travers le port SSH (22). 
+La `connexion` aux `machines virtuelles Windowns` se fait en utilisant le protocole RDP (3389) tandis que la connexion à une `machine virtuelle linux` se fait à l'aide d'une clé publique SSH (22) ou d'un login/password ainsi que d'une adresse IP publique. 
 
 Une machine virtuelle est susceptible d'être arrêtée à cause de 3 événements:
 - une `maintenance planifiée` du serveur physique par Microsoft. Exemple: mise à jour OS, drivers, etc.
@@ -99,9 +99,9 @@ Une machine virtuelle est susceptible d'être arrêtée à cause de 3 événemen
 
 Le `domaine d'erreur` (vm sur différentes racks) vous permet d'assurer la haute disponibilité de vos application lors d'une maintenance planifiée et un arrêt brutal. Le `domaine de mise à jour` vous permettra d'assurer la haute disponibilité des vos apps lors des maintenances planifiées.
 
-Un `groupe à haute disponibilité` est une fonctionnalité de regroupement logique qui permet d’isoler les ressources de machine virtuelle les unes des autres quand elles sont déployées. Il contient 2-3 domaines d'erreur et 5-20 domaines de mise à jour.
+Un `groupe à haute disponibilité` est une fonctionnalité de regroupement logique qui permet d’isoler les ressources de machine virtuelle les unes des autres quand elles sont déployées. Azure vérifie que les machines virtuelles que vous placez dans un groupe à haute disponibilité s’exécutent sur plusieurs serveurs physiques, racks de calcul, unités de stockage et commutateurs réseau. En cas de défaillance matérielle ou logicielle, seul un sous-ensemble de vos machines virtuelles est impacté et votre solution globale reste opérationnelle. Les groupes à haute disponibilité sont essentiels à la création de solutions cloud fiables. Il vous permet de définir le nombre de domaines de mises à jour et d'erreurs. Il contient 2-3 domaines d'erreur et 5-20 domaines de mise à jour.
 
-L'`équilibrage de charge`
+L'`équilibreur de charge Azure` est un équilibreur de charge de couche 4 qui répartit le trafic entrant entre plusieurs instances de machines virtuelles saines. Les équilibreurs de charge sont soit accessibles sur Internet (par l'intermédiaire d'une adresse IP publique), soit accessibles en interne (uniquement à partir d'un réseau virtuel). Les équilibreurs de charge Azure prennent également en charge la traduction d'adresses réseau (NAT) pour router le trafic entre des adresses IP publiques et privées.
 
 Les `groupes de machines virtuelles identiques Azure` vous permettent de créer et de gérer un groupe de machines virtuelles avec équilibrage de charge. Le nombre d’instances de machine virtuelle peut augmenter ou diminuer automatiquement en réponse à la demande ou à une planification définie. Les groupes identiques offrent une haute disponibilité à vos applications et vous permettent de centraliser la gestion, la configuration et la mise à jour d’un grand nombre de machines virtuelles.
 
@@ -109,4 +109,8 @@ La `réservation` de ressources permet économiser lorsque vous savez que vous u
 
 Le `service d'application` vous permet de déployer vos applications dans Azure sans vous soucier de l'administration des machines vituelles sous-jacentes. Le plan service d'applicaition l'ensemble des machines virtuelles créer automatique par Microsoft pour assurer le déployement de vos applications.
 
-`Azure containair registry` permet d'enregistrer et de gérer les images Docker. `Azure container instance` permet d'exécuter les containeurs Docker. `Web app` vous permet d'empaqueter une application web en tant que image Docker.
+Le `registre de conteneur` est votre entrepôt de référence qui vous permet d'enregistrer et de gérer les images Docker. L'`instances de conteneur` permet d'exécuter les containeurs Docker. Le `web app pour conteneur` vous permet d'empaqueter une application web en tant que image Docker.
+
+`Azure Kubernetes Service (AKS)` est un service d'orchestration open source permettant de déployer, mettre à l'échelle et administrer les applications en conteneurs (conteneurisées).
+
+Une `adresse IP` permet d'identifier une ressource sur un réseau. Chaque ressource peut être identifiée soit à travers une `adresse IP locale` à votre réseau domestique/professionnel soit à travers une `addresse IP publique` permettant de communiquer via Internet. La commande `ipconfig` vous permet de savoir votre adresse IP locale tandis que devez vous pouvez taper `https://mon-ip.io` pour savoir votre IP adresse publique parce que ca provient de votre fournisseur Internet.
