@@ -109,3 +109,4 @@ La `réservation` de ressources permet économiser lorsque vous savez que vous u
 
 Le `service d'application` vous permet de déployer vos applications dans Azure sans vous soucier de l'administration des machines vituelles sous-jacentes. Le plan service d'applicaition l'ensemble des machines virtuelles créer automatique par Microsoft pour assurer le déployement de vos applications.
 
+`Azure containair registry` permet d'enregistrer et de gérer les images Docker. `Azure container instance` permet d'exécuter les containeurs Docker. `Web app` vous permet d'empaqueter une application web en tant que image Docker.
